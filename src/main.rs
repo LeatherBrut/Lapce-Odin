@@ -115,16 +115,16 @@ fn initialize(params: InitializeParams) -> Result<()> {
 }
 
 impl LapcePlugin for State {
-    fn handle_request(&mut self, _id: u64, method: String, params: Value) {
+    fn handle_request(&mut self, _id: u64, method: String, params: Value) { 
         #[allow(clippy::single_match)]
         match method.as_str() {
             Initialize::METHOD => {
                 let params: InitializeParams = serde_json::from_value(params).unwrap();
                 if let Err(e) = initialize(params) {
-                    PLUGIN_RPC.window_show_message(MessageType::ERROR, format!("plugin returned with error: {e}"))
+                PLUGIN_RPC.window_show_message(MessageType::ERROR, format!("plugin returned with error: {e}"));
                 }
             }
-            _ => {}
-        }
+            _=>{}
+        };
     }
 }
