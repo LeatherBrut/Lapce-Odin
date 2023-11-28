@@ -1,12 +1,12 @@
 name = "Odin"
-version = "0.0.0"
+version = "0.0.1"
 author = "William"
-display-name = "<Odilang support"
-description = "add odinglang Support to lapce"
-wasm = "bin/<OdinSupport>.wasm"
+display-name = "Odin"
+description = "add odinglang Support to lapce editor"
+wasm = "bin/odin.wasm"
 
 [activation]
-language = []
+language = ["odin"]
 workspace-contains = []
 
 [config."lsp.serverPath"]
